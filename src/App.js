@@ -1,10 +1,10 @@
 import "./App.css";
+import Card from "./components/Card/index.tsx";
 
 function App() {
   return (
     <div className="App">
-      {/* Lembrar de remover a div do meio*/}
-      <div>Teste</div>
+      <Card></Card>
     </div>
   );
 }
