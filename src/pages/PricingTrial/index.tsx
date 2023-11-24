@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../../components/Card/index.tsx";
 import TopText from "../../components/TopText/index.tsx";
-import checkIcon from "../../assets/images/icon-check.svg";
+import List from "../../components/List/index.tsx";
 
 const PricingTrial = () => {
+  const defaultValue = "85";
+  const [value, setValue] = useState(defaultValue);
+
   return (
     <>
       <TopText
@@ -12,16 +15,23 @@ const PricingTrial = () => {
       />
       <Card>
         {/* topCard */}
-        <div>
-          <div>
+        <div className="flex flex-col">
+          <div className="flex">
             <p>100K PAGEVIEWS</p>
-            <div>
-              <p>$16.00</p>
+            <div className="flex">
+              $<p>{value}</p>
               <p>/ month</p>
             </div>
           </div>
-          <input type="range" min="10" max="160" step="30" />
-          <div>
+          <input
+            type="range"
+            min="10"
+            max="160"
+            step="15"
+            defaultValue={defaultValue}
+            onChange={(e) => setValue(e.target.value)}
+          />
+          <div className="flex">
             <p>Monthly Billing</p>
             <button>Formatar</button>
             <p>Yearly Billing</p>
@@ -29,26 +39,9 @@ const PricingTrial = () => {
           </div>
         </div>
         {/* FooterCard */}
-        <div>
+        <div className="flex">
           {/* List */}
-          <div>
-            <ul>
-              <div>
-                <li>
-                  <img src={checkIcon} alt="checkIcon" />
-                  <p>Unlimited websites</p>
-                </li>
-                <li>
-                  <img src={checkIcon} alt="checkIcon" />
-                  <p>100% data ownership</p>
-                </li>
-                <li>
-                  <img src={checkIcon} alt="checkIcon" />
-                  <p>Email reports</p>
-                </li>
-              </div>
-            </ul>
-          </div>
+          <List />
           <div>
             <button>Start my trial</button>
           </div>
