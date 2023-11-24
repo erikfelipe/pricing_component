@@ -1,10 +1,10 @@
 import "./App.css";
-import Card from "./components/Card/index.tsx";
+import PricingTrial from "./pages/PricingTrial/index.tsx";
 
 function App() {
   return (
     <div className="App">
-      <Card></Card>
+      <PricingTrial />
     </div>
   );
 }
