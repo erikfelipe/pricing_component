@@ -8,6 +8,11 @@ const PricingTrial = () => {
   const defaultValue = 16;
   const [price, setPrice] = useState(16);
   const [pageviews, setPageviews] = useState("100K");
+  const [toggleBilling, setToggleBilling] = useState(false);
+
+  const handleToggleBilling = () => {
+    setToggleBilling(!toggleBilling);
+  };
 
   const marks = [
     { value: 8, price: "8" },
@@ -44,8 +49,8 @@ const PricingTrial = () => {
       />
       <Card>
         {/* topCard */}
-        <div className="flex flex-col">
-          <div className="flex">
+        <div className="flex flex-col mx-10 my-5">
+          <div className="flex justify-between mb-5">
             <p>{pageviews} PAGEVIEWS</p>
             <div className="flex">
               $<p>{price}</p>
@@ -59,15 +64,26 @@ const PricingTrial = () => {
             onChange={handleSliderChange}
             max={marks[marks.length - 1].value}
           />
-          <div className="flex">
+          <div className="flex mt-5">
             <p>Monthly Billing</p>
-            <button>Formatar</button>
+            <button
+              className={`flex flex-col justify-center w-10 border rounded-xl bg-gray-200 ${
+                toggleBilling ? "" : "flex-row-reverse"
+              }`}
+              onClick={handleToggleBilling}
+            >
+              <div
+                className={`w-5 h-5 rounded-full bg-white ${
+                  toggleBilling ? "" : "ml-auto"
+                }`}
+              ></div>
+            </button>
             <p>Yearly Billing</p>
             <p>25% Discount</p>
           </div>
         </div>
         {/* FooterCard */}
-        <div className="flex">
+        <div className="flex justify-between border-t-2 border-gray-100 w-full">
           {/* List */}
           <List />
           <div>

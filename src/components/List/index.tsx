@@ -5,20 +5,18 @@ const List = () => {
   return (
     <div>
       <ul>
-        <div>
-          <li className="flex">
-            <img src={checkIcon} alt="checkIcon" className="h-fit" />
-            <p>Unlimited websites</p>
-          </li>
-          <li>
-            <img src={checkIcon} alt="checkIcon" className="h-fit" />
-            <p>100% data ownership</p>
-          </li>
-          <li>
-            <img src={checkIcon} alt="checkIcon" className="h-fit" />
-            <p>Email reports</p>
-          </li>
-        </div>
+        <li className="flex items-center">
+          <img src={checkIcon} alt="checkIcon" className="h-fit" />
+          <p className="ml-2">Unlimited websites</p>
+        </li>
+        <li className="flex items-center">
+          <img src={checkIcon} alt="checkIcon" className="h-fit" />
+          <p className="ml-2">100% data ownership</p>
+        </li>
+        <li className="flex items-center">
+          <img src={checkIcon} alt="checkIcon" className="h-fit" />
+          <p className="ml-2">Email reports</p>
+        </li>
       </ul>
     </div>
   );
